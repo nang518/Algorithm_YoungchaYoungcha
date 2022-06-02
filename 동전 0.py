@@ -1,4 +1,3 @@
-
 N,K = map(int, input().split())
 
 money = list()
