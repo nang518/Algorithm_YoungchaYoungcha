@@ -28,7 +28,7 @@ public:
     }
 
     long long getSquaredDistanceTo(Point2D target)
-    //두 좌표 제곱거리 계산
+    //두 좌표 제곱 거리 계산
     {
         long long dx = abs(this->x-target.x);
         long long dy = abs(this->y-target.y);
@@ -36,7 +36,7 @@ public:
     }
 
     double getDistanceTo(Point2D target)
-    //두 좌표 실수거리 계산
+    //두 좌표 실수 거리 계산
     {
         long long sqd = this -> getSquaredDistanceTo(target);
         return sqrt(sqd);
