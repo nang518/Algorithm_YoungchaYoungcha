@@ -21,7 +21,7 @@ int main()
         }
         else
         {
-            s.insert(X);
+            s.insert(X); //set에 등록
             printf("OK\n");
         }
     }
