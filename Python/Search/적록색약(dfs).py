@@ -3,6 +3,7 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
 
 n = int(input())
+
 graph = []
 for _ in range(n):
     graph.append(list(input().strip()))
@@ -36,7 +37,7 @@ for i in range(n):
     for j in range(n):
         if graph[i][j] == 'G':
             graph[i][j] = 'R'
-
+    
 visited = [[False]*n for _ in range(n)]
 blind_cnt = 0
 

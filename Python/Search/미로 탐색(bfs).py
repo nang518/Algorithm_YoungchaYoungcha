@@ -1,10 +1,10 @@
 import sys
-from collections import deque
 input = sys.stdin.readline
+from collections import deque
 
 n,m = map(int,input().split())
-graph = []
 
+graph = []
 for _ in range(n):
     graph.append(list(input().strip()))
 
@@ -20,19 +20,17 @@ def bfs(x,y):
     distance[x][y] = 1
 
     while que:
-        a,b = que.popleft()
+        x,y = que.popleft()
 
         for i in range(4):
-            nx = a + dx[i]
-            ny = b + dy[i]
-        
+            nx = x + dx[i]
+            ny = y + dy[i]
+
             if (0<=nx<n) and (0<=ny<m):
                 if not visited[nx][ny] and graph[nx][ny] == '1':
                     visited[nx][ny] = True
-                    distance[nx][ny] = distance[a][b] + 1
+                    distance[nx][ny] = distance[x][y] +1
                     que.append((nx,ny))
-
-                     
 
 visited = [[False]*m for _ in range(n)]
 distance = [[0]*m for _ in range(n)]
