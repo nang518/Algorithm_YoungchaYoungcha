@@ -18,11 +18,10 @@ def dfs(x,y):
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
-
+    
         if (0<=nx<n) and (0<=ny<n):
-            if not visited[nx][ny]:
-                if graph[nx][ny] == color:
-                    dfs(nx,ny)
+            if not visited[nx][ny] and graph[nx][ny] == color:
+                dfs(nx,ny)
 
 visited = [[False]*n for _ in range(n)]
 cnt = 0
@@ -33,13 +32,13 @@ for i in range(n):
             cnt += 1
             dfs(i,j)
 
+visited = [[False]*n for _ in range(n)]
+blind_cnt = 0
+
 for i in range(n):
     for j in range(n):
         if graph[i][j] == 'G':
             graph[i][j] = 'R'
-    
-visited = [[False]*n for _ in range(n)]
-blind_cnt = 0
 
 for i in range(n):
     for j in range(n):
