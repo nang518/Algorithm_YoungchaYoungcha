@@ -1,43 +1,43 @@
 import sys
 input = sys.stdin.readline
-from collections import deque
+sys.setrecursionlimit(10**6)
 
 n = int(input())
 
 graph = []
 for _ in range(n):
-    graph.append(list(input().strip()))
+    temp = list(input().strip())
+    temp = list(map(int,temp))
+    graph.append(temp)
 
-def bfs(x,y):
-    global cnt
+
+
+## 탐색 메서드 정의
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+
+def search(x, y):
+    global number
+
     visited[x][y] = True
+    graph[x][y] = number 
 
-    dx = [1,-1,0,0]
-    dy = [0,0,1,-1]
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
 
-    que = deque()
-    que.append((x,y))
+        if (0 <= nx < n) and (0 <= ny < n):
+            if graph[nx][ny] != 0 and not visited[nx][ny]:
+                search(nx, ny)
 
-    while que:
-        x,y = que.popleft()
+## 탐색
+visited = [[False] * n for _ in range(n)]
 
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-        
-            if (0<=nx<n) and (0<=ny<n):
-                if not visited[nx][ny] and graph[nx][ny] == '1':
-                    visited[nx][ny] = True
-                    
-
-visited = [[False]*n for _ in range(n)]
-cnt = 1
-
+number = 1
 for i in range(n):
     for j in range(n):
-        if not visited[i][j] and graph[i][j] == '1':
-            bfs(i,j)
-            cnt += 1
-    
-    print(cnt)
+        if graph[i][j] != 0 and not visited[i][j]:
+            search(i, j)
+            number += 1
 
+            print(number)
