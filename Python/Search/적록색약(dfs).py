@@ -8,7 +8,7 @@ graph = []
 for _ in range(n):
     graph.append(list(input().strip()))
 
-dx = [1,-1,0,0]
+dx =  [1,-1,0,0]
 dy = [0,0,1,-1]
 
 def dfs(x,y):
@@ -24,7 +24,7 @@ def dfs(x,y):
                 dfs(nx,ny)
 
 visited = [[False]*n for _ in range(n)]
-cnt = 0
+cnt = 0 
 
 for i in range(n):
     for j in range(n):
