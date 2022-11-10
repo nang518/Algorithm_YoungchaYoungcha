@@ -8,7 +8,7 @@ graph = []
 for _ in range(n):
     graph.append(list(input().strip()))
 
-def bfs(x,y):
+def dfs(x,y):
     visited[x][y] = True
 
     dx = [1,-1,0,0]
@@ -35,5 +35,5 @@ def bfs(x,y):
 visited = [[False]*m for _ in range(n)]
 distance = [[0]*m for _ in range(n)]
 
-bfs(0,0)
+dfs(0,0)
 print(distance[n-1][m-1])

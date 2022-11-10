@@ -10,12 +10,12 @@ graph = [[] for _ in range(n+1)]
 for _ in range(m):
     x,y = map(int,input().split())
     graph[x].append(y)
-    graph[y].append(x)      
+    graph[y].append(x)
 
 def dfs(x,y,r):
     visited[x] = True
 
-    for i in graph[y]:
+    for i in graph[x]:
         if not visited[i]:
             if distance[i] == -1:
                 distance[i] = r

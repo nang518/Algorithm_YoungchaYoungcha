@@ -8,8 +8,8 @@ graph = []
 for _ in range(n):
     graph.append(list(map(int,input().split())))
 
-dx = [1,0]
-dy = [0,1]
+dx = [0,1]
+dy = [1,0]
 
 def dfs(x,y):
     visited[x][y] = True
