@@ -13,4 +13,4 @@ for _ in range(n):
         else:
             print(0)
     else:
-        heapq.heappush(pq, -1 * value)
+        heapq.heappush(pq,-1*value)
