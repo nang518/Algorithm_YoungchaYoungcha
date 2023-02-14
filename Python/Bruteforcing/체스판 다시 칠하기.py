@@ -28,5 +28,5 @@ for i in range(n-7):
         cnt.append(w_idx)
         cnt.append(b_idx)
 
-print(cnt)
+print(min(cnt))
 
