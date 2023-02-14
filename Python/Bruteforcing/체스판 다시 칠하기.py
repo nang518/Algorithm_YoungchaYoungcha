@@ -1,29 +1,32 @@
-n,m = map(int,input().split())
+import sys
+input = sys.stdin.readline
 
+n,m = map(int,input().split())
 board = []
 for i in range(n):
     board.append(input())
 
 cnt = []
-for x in range(n-7):
-    for y in range(m-7):
-        white_idx = 0
-        black_idx = 0
+for i in range(n-7):
+    for j in range(m-7):
+        w_idx, b_idx = 0,0 #w_idx: w로 시작할 때 바뀐 경우, b_idx: b로 시작할 때 바뀐 경우
 
-        for i in range(x,x+8):
-            for j in range(y,y+8):
-                if (i+j)%2==0: #짝수인 경우
-                    if board[i][j]!='W':
-                        white_idx += 1
+        #현재 행,열의 번호 합이 짝수이면 시작점의 색깔과 같아야 하고, 홀수이면 달라야 함
+        for a in range(i,i+8):
+            for b in range(j, j+8):
+                if (a+b) % 2 == 0:
+                    if board[a][b] != 'W':
+                        w_idx += 1
                     else:
-                        black_idx += 1
-                else: #홀수인 경우
-                    if board[i][j] != 'W':
-                        black_idx += 1
+                        b_idx += 1
+                else:
+                    if board[a][b] != 'W':
+                        b_idx += 1
                     else:
-                        white_idx += 1
-            
-        cnt.append(white_idx)
-        cnt.append(black_idx)
+                        w_idx += 1
 
-print(min(cnt))
+        cnt.append(w_idx)
+        cnt.append(b_idx)
+
+print(cnt)
+
