@@ -2,6 +2,7 @@ import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
 
+
 n = int(input())
 k = int(input())
 
@@ -12,11 +13,11 @@ for _ in range(k):
     graph[a].append(b)
     graph[b].append(a)
 
-def dfs(num):
+def dfs(v):
     global cnt
-    visited[num] = True
-
-    for i in graph[num]:
+    visited[v] = True
+    
+    for i in graph[v]:
         if not visited[i]:
             cnt += 1
             dfs(i)
