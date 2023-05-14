@@ -1,17 +1,24 @@
-N = int(input())
-I = []
-for i in range(N):
-    start,end = map(int,input().split())
-    I.append([start,end])
+import sys
+input = sys.stdin.readline
 
-I = sorted(I, key=lambda x:x[0])
-I = sorted(I, key=lambda x:x[1])
+n = int(input())
+arr = []
 
-cnt=0
-last=0
-for start,end in I:
+for i in range(n):
+    s,e = map(int,input().split())
+    arr.append([s,e])
+
+arr.sort()
+print(arr)
+arr = sorted(arr, key=lambda x:x[1])
+print(arr)
+
+print(arr)
+
+cnt, last = 0,0
+for start,end in arr:
     if start >= last:
-        cnt+=1
-        last=end
+        cnt += 1
+        last = end
 
 print(cnt)
