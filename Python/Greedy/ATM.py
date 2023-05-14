@@ -1,13 +1,14 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 p = list(map(int,input().split()))
 
 p.sort()
 
-pre = 0
-min = 0
+ans = 0
 
-for i in range(0,n):
-    min += pre + p[i]
-    pre += p[i]
+for i in range(n+1):
+    ans += sum(p[:i])
 
-print(min)
+print(ans)
