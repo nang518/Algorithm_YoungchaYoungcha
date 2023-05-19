@@ -47,3 +47,4 @@ for i in range(n):
             dfs(i,j)
 
 print(cnt, blind_cnt)
+
