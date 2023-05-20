@@ -1,17 +1,17 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-K = int(input())
-sensor = list(map(int,input().split()))
+n = int(input())
+k = int(input())
+sensor = list(map(int, input().split()))
 sensor.sort()
 
-if K >= N:
+if k >= n:
     print(0)
 else:
     arr = []
-    for i in range(0,N-1):
+    for i in range(0, n-1):
         arr.append(sensor[i+1]-sensor[i])
-    arr.sort()
-
-    print(sum(arr[:N-K]))
+        arr.sort()
+    
+    print(sum(arr[:n-k]))

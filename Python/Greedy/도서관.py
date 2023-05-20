@@ -1,28 +1,28 @@
-N,M = map(int,input().split())
-place = list(map(int,input().split()))
+import sys
+input = sys.stdin.readline
 
-left = []
-right = []
-distance = []
+n,m = map(int, input().split())
+place = list(map(int, input().split()))
 
+left, right = [], []
+max = 0
 for i in place:
-    if i>0:
+    if i > 0:
         right.append(i)
     else:
         left.append(i)
-
-max = 0
-for i in place:
+    
     if abs(i) > abs(max):
         max = i
 
+distance = []
 left.sort()
-for i in range(0, len(left), M):
+for i in range(0, len(left), m):
     if left[i] != max:
         distance.append(left[i])
 
 right.sort(reverse=True)
-for i in range(0, len(right), M):
+for i in range(0, len(right), m):
     if right[i] != max:
         distance.append(right[i])
 
