@@ -1,43 +1,43 @@
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10**6)
+sys,sys.setrecursionlimit(10**6)
 
 n = int(input())
 
 graph = []
 for _ in range(n):
-    temp = list(input().strip())
-    temp = list(map(int,temp))
-    graph.append(temp)
+    tmp = list(map(int, input().strip()))
+    graph.append(tmp)
 
+dx = [-1,1,0,0]
+dy = [0,0,-1,1]
 
-
-## 탐색 메서드 정의
-dx = [1, -1, 0, 0]
-dy = [0, 0, 1, -1]
-
-def search(x, y):
-    global number
-
+def dfs(x,y):
+    global num
     visited[x][y] = True
-    graph[x][y] = number 
+    num += 1
 
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
 
-        if (0 <= nx < n) and (0 <= ny < n):
+        if (0<=nx<n) and (0<=ny<n):
             if graph[nx][ny] != 0 and not visited[nx][ny]:
-                search(nx, ny)
+                dfs(nx,ny)
 
-## 탐색
-visited = [[False] * n for _ in range(n)]
+visited = [[False]*n for _ in range(n)]
 
-number = 1
+num = 0
+result = []
+
 for i in range(n):
     for j in range(n):
         if graph[i][j] != 0 and not visited[i][j]:
-            search(i, j)
-            number += 1
+            num = 0
+            dfs(i,j)      
+            result.append(num)
 
-            print(number)
+print(len(result))
+result.sort()
+for i in result:
+    print(i)
