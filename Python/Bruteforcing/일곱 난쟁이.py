@@ -1,22 +1,23 @@
 import sys
 input = sys.stdin.readline
 
-list = []
+arr = []
 for _ in range(9):
-    list.append(int(input()))
-list.sort()
-sum = sum(list)
+    arr.append(int(input()))
 
-one, two = 0,0
+sum = sum(arr)
+arr.sort()
+
+x,y = 0,0
 for i in range(8):
     for j in range(i+1,9):
-        if sum - (list[i]+list[j]) == 100:
-            one = list[i]
-            two = list[j]
+        if sum-(arr[i]+arr[j]) == 100:
+            x = arr[i]
+            y = arr[j]
 
-list.remove(one)
-list.remove(two)
-list.sort()
+arr.remove(x)
+arr.remove(y)
 
-for i in list:
+arr.sort()
+for i in arr:
     print(i)
