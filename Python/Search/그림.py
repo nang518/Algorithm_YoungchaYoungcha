@@ -37,7 +37,6 @@ for i in range(n):
             cnt += 1
         arr.append(w)
 
-
 print(cnt)
 if len(arr) == 0:
     print(0)
