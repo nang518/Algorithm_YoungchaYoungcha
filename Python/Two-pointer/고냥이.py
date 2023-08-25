@@ -12,8 +12,8 @@ else:
 
     while start < len(a)-1:
         if end == len(a):
-            ans = max(ans, end-start)
             break
+        
         check.add(a[end])
 
         # 문자 종류가 n개인 경우
