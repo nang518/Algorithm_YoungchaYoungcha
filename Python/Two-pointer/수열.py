@@ -1,9 +1,20 @@
 n,k = map(int,input().split())
 c = list(map(int,input().split()))
 
-# start,end = 0,0
-# total,cnt = 0,0
-# ans = 0
+start,end = 0,k-1
+total,cnt = sum(c[:k]),k
+ans = total
+
+while end<n-1:
+    total -= c[start]
+    start += 1
+    end += 1
+    total += c[end]
+
+    ans = max(ans, total)
+
+print(ans)
+
 
 # while end<=n:
 #     if cnt == k:
@@ -18,9 +29,9 @@ c = list(map(int,input().split()))
 #         end += 1
 #         cnt += 1
 
-ans = total = sum(c[:k])
-for i in range(k,n):
-    total += c[i]-c[i-k]
-    ans = max(total, ans) 
+# ans = total = sum(c[:k])
+# for i in range(k,n):
+#     total += c[i]-c[i-k]
+#     ans = max(total, ans) 
 
-print(ans)
+#print(ans)
