@@ -10,8 +10,11 @@ dic = {}
 for i in range(len(cards)):
     dic[cards[i]] = 0
 
-for i in range(m):
-    if checks[i] not in dic:
-        print(0, end = ' ')
+for i in range(len(cards)):
+    dic[cards[i]] += 1
+
+for check in checks:
+    if check in dic:
+        print(dic[check], end = ' ')
     else:
-        print(1, end = ' ')
+        print(0, end = ' ')
