@@ -12,5 +12,6 @@ for _ in range(n):
             print(-1 * heapq.heappop(pq))
         else:
             print(0)
+    
     else:
-        heapq.heappush(pq, -1*x)
+        heapq.heappush(pq, -1 * x)
