@@ -3,31 +3,31 @@ input = sys.stdin.readline
 
 n = int(input())
 
-stack = []
+stk = []
 for _ in range(n):
-    command = input().split()
+    tmp = input().split()
 
-    if command[0] == "push":
-        stack.append(command[1])
+    if tmp[0] == "push":
+        stk.append(tmp[1])
     
-    elif command[0] == "pop":
-        if len(stack) != 0:    
-            print(stack[-1])
-            stack.pop()
+    elif tmp[0] == "pop":
+        if len(stk) != 0:
+            print(stk[-1])
+            stk.pop()
         else:
             print(-1)
     
-    elif command[0] == "size":
-        print(len(stack))
+    elif tmp[0] == "size":
+        print(len(stk))
     
-    elif command[0] == "empty":
-        if len(stack) != 0:
-            print(0)
-        else:
+    elif tmp[0] == "empty":
+        if len(stk) == 0:
             print(1)
+        else:
+            print(0)
     
-    elif command[0] == "top":
-        if len(stack) != 0:
-            print(stack[-1])
+    elif tmp[0] == "top":
+        if len(stk) != 0:
+            print(stk[-1])
         else:
             print(-1)

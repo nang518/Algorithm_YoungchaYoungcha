@@ -1,10 +1,15 @@
-K = int(input())
-li = []
-for i in range(K):
-    n = int(input())
-    if n == 0:
-        li.pop()
-    else:
-        li.append(n)
+import sys
+input = sys.stdin.readline
 
-print(sum(li))
+k = int(input())
+
+stk = []
+for _ in range(k):
+    tmp = int(input())
+
+    if tmp == 0:
+        stk.pop()
+    else:
+        stk.append(tmp)
+
+print(sum(stk))
