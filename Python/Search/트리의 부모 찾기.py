@@ -5,17 +5,18 @@ sys.setrecursionlimit(10**6)
 n = int(input())
 
 graph = [[] for _ in range(n+1)]
-for i in range(n-1): 
-    a,b = map(int,input().split())
+
+for i in range(n-1):
+    a,b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
 
-def dfs(n):
-    visited[n] = True
+def dfs(num):
+    visited[num] = True
 
-    for i in graph[n]:
+    for i in graph[num]:
         if not visited[i]:
-            parent[i] = n
+            parent[i] = num
             dfs(i)
 
 visited = [False] * (n+1)
