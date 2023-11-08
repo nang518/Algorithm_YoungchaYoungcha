@@ -3,17 +3,19 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
 
 n = int(input())
+
 graph = []
 max_num = 0
-for i in range(n):
-    tmp = list(map(int,input().split()))
+
+for _ in range(n):
+    tmp = list(map(int, input().split()))
     graph.append(tmp)
 
-    for j in tmp:
-        if j > max_num:
-            max_num = j
+    for i in tmp:
+        if i > max_num:
+            max_num = i
 
-dx = [1,-1,0,0]
+dx = [-1,1,0,0]
 dy = [0,0,1,-1]
 
 def dfs(x,y,h):
@@ -23,21 +25,22 @@ def dfs(x,y,h):
         nx = x + dx[i]
         ny = y + dy[i]
 
-        if 0<=nx<n and 0<=ny<n:
+        if 0 <= nx < n and 0 <= ny < n:
             if not visited[nx][ny] and graph[nx][ny] > h:
                 dfs(nx,ny,h)
 
-ans = 1
-for x in range(max_num):
-    visited = [[False]*n for _ in range(n)]
+result = 1
+for h in range(max_num):
+    visited = [[False] * n for _ in range(n)]
+    
     cnt = 0
 
     for i in range(n):
         for j in range(n):
-            if not visited[i][j] and graph[i][j] > x:
+            if not visited[i][j] and graph[i][j] > h:
                 cnt += 1
-                dfs(i,j,x)
+                dfs(i,j,h)
     
-    ans = max(ans, cnt)
+    result = max(result, cnt)
 
-print(ans)
+print(result)

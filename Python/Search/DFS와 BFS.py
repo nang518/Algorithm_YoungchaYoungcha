@@ -3,29 +3,26 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
 from collections import deque
 
-#n: 정점 개수, m: 간선 개수, v: 시작 정점
-n,m,v = map(int,input().split()) 
+n,m,v = map(int, input().split())
 
 graph = [[] for _ in range(n+1)]
 for _ in range(m):
-    a,b = map(int,input().split())
+    a,b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
 
 for i in range(len(graph)):
     graph[i].sort()
 
-#dfs
 def dfs(v):
     visited[v] = True
-    print(v, end= ' ')
+    print(v, end = ' ')
 
     for i in graph[v]:
         if not visited[i]:
             visited[i] = True
             dfs(i)
 
-#bfs
 def bfs(v):
     visited[v] = True
 
@@ -34,7 +31,7 @@ def bfs(v):
 
     while que:
         x = que.popleft()
-        print(x, end=' ') 
+        print(x, end = ' ')
 
         for i in graph[x]:
             if not visited[i]:
