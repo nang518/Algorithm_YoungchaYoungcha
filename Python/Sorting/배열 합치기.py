@@ -5,5 +5,5 @@ b = list(map(int, input().split()))
 c = a+b
 c.sort()
 
-ans = ' '.join(map(str, c))
-print(ans)
+result = ' '.join(map(str,c))
+print(result)

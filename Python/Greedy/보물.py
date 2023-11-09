@@ -1,12 +1,12 @@
-N = int(input())
-A = list(map(int,input().split()))
-B = list(map(int,input().split()))
+n = int(input())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
 
 answer = 0
 
-for i in range(N):
-    answer += min(A) * max(B)
-    A.remove(min(A))
-    B.remove(max(B))
+for _ in range(n):
+    answer += min(a) * max(b)
+    a.remove(min(a))
+    b.remove(max(b))
 
 print(answer)
