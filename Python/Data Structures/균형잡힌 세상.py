@@ -1,26 +1,30 @@
 while True:
     s = input()
-    stack = []
+
+    stk = []
 
     if s == '.':
         break
 
     for i in s:
         if i == '[' or i == '(':
-            stack.append(i)
+            stk.append(i)
+        
         elif i == ']':
-            if len(stack) != 0 and stack[-1] == '[':
-                stack.pop()
+            if len(stk) != 0 and stk[-1] == '[':
+                stk.pop()
             else:
-                stack.append(']')
+                stk.append(i)
                 break
+        
         elif i == ')':
-            if len(stack) != 0 and stack[-1] == '(':
-                stack.pop()
+            if len(stk) != 0 and stk[-1] == '(':
+                stk.pop()
             else:
-                stack.append(')')
+                stk.append(i)
                 break
-    if len(stack) == 0:
+    
+    if len(stk) == 0:
         print('yes')
     else:
         print('no')
