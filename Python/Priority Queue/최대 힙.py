@@ -1,4 +1,9 @@
-import sys,heapq
+# import sys,heapq
+# input = sys.stdin.readline
+
+# n = int(input())
+
+import sys, heapq
 input = sys.stdin.readline
 
 n = int(input())
