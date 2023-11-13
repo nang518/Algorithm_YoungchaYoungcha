@@ -1,23 +1,30 @@
-N = int(input())
-A = list(map(int,input().split()))
-A.sort()
-M = int(input())
-check = list(map(int,input().split()))
+import sys
+input = sys.stdin.readline
 
-for i in check:
-    exist = False
-    low,high = 0,N-1
+n = int(input())
+
+a = list(map(int, input().split()))
+a.sort()
+
+m = int(input())
+search = list(map(int, input().split()))
+
+for check in search:
+    low, high = 0, n-1
+
     while low <= high:
-        mid = (low+high) // 2
-        if A[mid] > i:
-            high = mid -1
-        elif A[mid] < i:
+        exist = False
+        mid = (low + high) // 2
+
+        if a[mid] > check:
+            high = mid - 1
+        elif a[mid] < check:
             low = mid + 1
         else:
             exist = True
             break
     
     if exist:
-        print(1, end='\n')
+        print(1, end = '\n')
     else:
-        print(0, end='\n')
+        print(0, end = '\n')

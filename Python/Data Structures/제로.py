@@ -5,11 +5,11 @@ k = int(input())
 
 stk = []
 for _ in range(k):
-    tmp = int(input())
+    x = int(input())
 
-    if tmp == 0:
+    if x == 0:
         stk.pop()
     else:
-        stk.append(tmp)
+        stk.append(x)
 
 print(sum(stk))

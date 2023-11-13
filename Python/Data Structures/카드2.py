@@ -1,16 +1,14 @@
+from collections import deque
 import sys
 input = sys.stdin.readline
 
 n = int(input())
 
 card = [i for i in range(1, n+1)]
-delete = []
+card = deque(card)
 
 while len(card) != 1:
-    delete.append(card.pop(0))
-    card.append(card.pop(0))
-
-for i in delete:
-    print(i, end = ' ')
+    card.popleft()
+    card.append(card.popleft())
 
 print(card[0])
