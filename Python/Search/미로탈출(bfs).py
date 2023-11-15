@@ -1,14 +1,3 @@
-#NxM 크기의 미로에서 동빈이의 위치는 (1,1)이며 출구는(N,M)의 위치에 존재한다.
-#괴물이 있는 부분은 0, 없는 부분은 1로 표시
-#탈출하기 위해 움직여야 하는 최소 칸의 개수
-
-# 5 6
-# 101010
-# 111111
-# 000001
-# 111111
-# 111111
-
 import sys
 input = sys.stdin.readline
 from collections import deque
