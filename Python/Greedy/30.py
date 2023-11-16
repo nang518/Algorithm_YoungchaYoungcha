@@ -1,5 +1,5 @@
 n = list(input())
-n.sort(reverse = True)
+n.sort(reverse=True)
 
 sum = 0
 for i in n:

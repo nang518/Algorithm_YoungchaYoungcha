@@ -1,23 +1,20 @@
-import sys
-input = sys.stdin.readline
-
 n = int(input())
 
-dic = {}
-for _ in range(n):
-    name = input()
+book = {}
 
-    if name in dic:
-        dic[name] += 1
+for _ in range(n):
+    title = input()
+
+    if title in book:
+        book[title] += 1
     else:
-        dic[name] = 1
+        book[title] = 1
 
 max = 0
-dic = dict(sorted(dic.items()))
 
-for i in dic:
-    if dic[i] > max:
-        max = dic[i]
-        result = i
+for best in sorted(book):
+    if book[best] > max:
+        max = book[best]
+        result = best
 
 print(result)
