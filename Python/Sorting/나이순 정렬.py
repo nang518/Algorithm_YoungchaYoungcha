@@ -10,4 +10,5 @@ for _ in range(n):
 member.sort(key = lambda x : x[0])
 
 for age,name in member:
+    
     print(age, name)
