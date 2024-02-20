@@ -1,5 +1,5 @@
 n,c = map(int, input().split())
-message = list(map(int, input().split( )))
+message = list(map(int, input().split()))
 
 cnt = {}
 
@@ -10,7 +10,7 @@ for m in message:
     else:
         cnt[m] = 1
 
-cnt = sorted(cnt.items(), key = lambda x:x[1], reverse = True)
+cnt = sorted(cnt.items(), key = lambda x : x[1], reverse = True)
 
 for key,value in cnt:
     for _ in range(value):

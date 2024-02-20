@@ -1,11 +1,11 @@
 s = input()
 
-result = []
+arr = []
 
 for i in range(len(s)):
-    result.append(s[i:])
+    arr.append(s[i:])
 
-result.sort()
+arr.sort()
 
-for i in result:
+for i in arr:
     print(i)
