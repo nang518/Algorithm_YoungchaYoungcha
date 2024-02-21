@@ -1,20 +1,20 @@
 n = int(input())
 
-number = {}
-
+arr = {}
 for _ in range(n):
-    x = int(input())
+    tmp = int(input())
 
-    if x in number:
-        number[x] += 1
+    if tmp in arr:
+        arr[tmp] += 1
+
     else:
-        number[x] = 1
+        arr[tmp] = 1
 
 max = 0
 
-for i in sorted(number):
-    if number[i] > max:
-        max = number[i]
+for i in sorted(arr):
+    if arr[i] > max:
+        max = arr[i]
         result = i
 
 print(result)
