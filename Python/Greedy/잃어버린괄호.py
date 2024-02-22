@@ -1,11 +1,12 @@
-s=input().split('-')
-sum = 0
+s = input().split('-')
+
+total = 0
 
 for i in s[0].split('+'):
-    sum += int(i)
+    total += int(i)
 
 for i in s[1:]:
     for j in i.split('+'):
-        sum -= int(j)
+        total -= int(j)
 
-print(sum)
+print(total)
