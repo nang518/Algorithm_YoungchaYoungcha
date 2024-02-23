@@ -11,7 +11,7 @@ for _ in range(n):
     for num in numbers:
         if len(pq) < n:
             heapq.heappush(pq, num)
-
+            
         else:
             if pq[0] < num:
                 heapq.heappop(pq)

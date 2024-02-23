@@ -1,31 +1,32 @@
 import sys
 input = sys.stdin.readline
 
+n = int(input())
+
 stk = []
 ans = []
 
-n = int(input())
-
-cnt = 1
-find = True
+tmp = 1
+sequence = True # 수열 만들기가 불가능한 경우를 위함
 
 for _ in range(n):
-    tmp = int(input())
+    num = int(input())
 
-    while cnt <= tmp:
-        stk.append(cnt)
-        cnt += 1
+    while tmp <= num:
+        stk.append(tmp)
+        tmp += 1
         ans.append('+')
     
-    if stk[-1] == tmp:
+    if stk[-1] == num:
         stk.pop()
         ans.append('-')
-    
-    else:
-        find = False
 
-if find:
+    else:
+        sequence = False
+
+if sequence:
     for i in ans:
         print(i)
+
 else:
-    print("NO")
+    print('NO')
