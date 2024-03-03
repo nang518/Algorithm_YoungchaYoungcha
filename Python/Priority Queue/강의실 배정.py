@@ -3,24 +3,29 @@ input = sys.stdin.readline
 
 n = int(input())
 
-arr = list()
-for _ in range(n):
-    start,end = map(int,input().split())
-    arr.append((start,end))
-arr.sort()
-
 pq = []
+lecture = []
+
+for _ in range(n):
+    s,t = map(int, input().split())
+    lecture.append((s,t))
+
+lecture.sort()
+
 for i in range(n):
-    start, end = arr[i]
+    start, end = lecture[i]
 
     if not pq:
-        heapq.heappush(pq,end)
+        heapq.heappush(pq, end)
+    
     else:
         e = heapq.heappop(pq)
+
         if start >= e:
             heapq.heappush(pq, end)
+
         else:
-            heapq.heappush(pq,end)
-            heapq.heappush(pq,e)
+            heapq.heappush(pq, end)
+            heapq.heappush(pq, e)
 
 print(len(pq))

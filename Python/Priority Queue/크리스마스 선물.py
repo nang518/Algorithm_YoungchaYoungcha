@@ -12,6 +12,7 @@ for _ in range(n):
             print(-1 * heapq.heappop(pq))
         else:
             print(-1)
+    
     else:
-        for i in range(1,len(a)):
+        for i in range(1, len(a)):
             heapq.heappush(pq, -1 * a[i])
