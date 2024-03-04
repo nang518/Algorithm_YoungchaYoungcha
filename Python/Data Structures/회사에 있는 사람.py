@@ -1,14 +1,17 @@
 n = int(input())
 
-arr = set()
+dic = {}
 
 for _ in range(n):
     log = input().split()
 
-    if log[1] == "enter":
-        arr.add(log[0])
+    if log[1] == 'enter':
+        dic[log[0]] = 0
+
     else:
-        arr.remove(log[0])
-    
-for name in sorted(arr, reverse=True):
-    print(name)
+        del dic[log[0]]
+
+dic = sorted(dic.keys(), reverse = True)
+
+for i in dic:
+    print(i)
