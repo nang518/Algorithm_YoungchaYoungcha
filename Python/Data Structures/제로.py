@@ -9,6 +9,7 @@ for _ in range(k):
 
     if x == 0:
         stk.pop()
+    
     else:
         stk.append(x)
 

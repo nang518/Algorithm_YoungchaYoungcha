@@ -1,9 +1,6 @@
-import sys
-input = sys.stdin.readline
-
 n = int(input())
 
-pixel = [[0] * 100 for _ in range(100)]
+pixel = [[0]*100 for _ in range(100)]
 cnt = 0
 
 for _ in range(n):
