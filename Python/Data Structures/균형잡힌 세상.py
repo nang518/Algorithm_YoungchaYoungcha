@@ -5,7 +5,7 @@ while True:
 
     if s == '.':
         break
-
+    
     for i in s:
         if i == '[' or i == '(':
             stk.append(i)
@@ -13,18 +13,19 @@ while True:
         elif i == ']':
             if len(stk) != 0 and stk[-1] == '[':
                 stk.pop()
+            
             else:
                 stk.append(i)
-                break
-        
+                
         elif i == ')':
             if len(stk) != 0 and stk[-1] == '(':
                 stk.pop()
+            
             else:
                 stk.append(i)
-                break
-    
+
     if len(stk) == 0:
         print('yes')
+
     else:
         print('no')

@@ -4,15 +4,15 @@ a = set()
 b = set()
 
 for _ in range(n):
-    a.add(input().strip())
+    a.add(input())
 
 for _ in range(m):
-    b.add(input().strip())
+    b.add(input())
 
-result = list(a & b)
-result.sort()
+c = list(a & b)
+c.sort()
 
-print(len(result))
+print(len(c))
 
-for name in result:
-    print(name)
+for i in c:
+    print(i)
