@@ -4,14 +4,13 @@ input = sys.stdin.readline
 
 n,k = map(int, input().split())
 
-dq = deque([i for i in range(1,n+1)])
-
+d = deque([i for i in range(1, n+1)])
 result = []
 
-while len(dq) != 0:
+while len(d) != 0:
     for _ in range(k-1):
-        dq.append(dq.popleft())
+        d.append(d.popleft())
     
-    result.append(str(dq.popleft()))
+    result.append(str(d.popleft()))
 
 print('<' + ', '.join(result) + '>')
