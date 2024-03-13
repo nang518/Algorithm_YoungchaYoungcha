@@ -1,11 +1,13 @@
 n = list(input())
-n.sort(reverse=True)
 
-sum = 0
+n.sort(reverse = True)
+
+total = 0 
 for i in n:
-    sum += int(i)
+    total += int(i)
 
-if sum % 3 != 0 or "0" not in n:
+if total % 3 != 0 or "0" not in n:
     print(-1)
+
 else:
     print(''.join(n))
