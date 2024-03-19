@@ -12,7 +12,7 @@ for _ in range(m):
     graph[a].append(b)
     graph[b].append(a)
 
-for i in range(len(graph)):
+for i in range(n+1):
     graph[i].sort()
 
 # dfs
