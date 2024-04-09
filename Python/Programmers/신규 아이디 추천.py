@@ -1,38 +1,39 @@
 def solution(new_id):
     answer = ''
 
-    # 1단계
+    # step 1
     new_id = new_id.lower()
 
-    # 2단계
+    # step 2
     for word in new_id:
         if word.isalnum() or word in '-_.':
             answer += word
-    
-    # 3단계
+
+    # step 3
     while '..' in answer:
         answer = answer.replace('..', '.')
-
-    # 4단계
+    
+    # step 4
     if answer[0] == '.' and len(answer) > 1:
         answer = answer[1:]
     
     if answer[-1] == '.':
         answer = answer[:-1]
-    
-    # 5단계
+
+    # step 5
     if len(answer) == 0:
         answer = 'a'
-
-    # 6단계
+    
+    # step 6
     if len(answer) >= 16:
         answer = answer[:15]
-
+        
         if answer[-1] == '.':
             answer = answer[:-1]
 
-    # 7단계
+    # step 7
     if len(answer) <= 2:
         answer = answer + answer[-1] * (3 - len(answer))
+
 
     return answer
