@@ -18,4 +18,4 @@ for _ in range(t):
     for i in indexList:
         result.append(secret[i])
 
-    print(result)
+    print(*result)
