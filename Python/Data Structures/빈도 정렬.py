@@ -12,6 +12,6 @@ for m in message:
 
 cnt = sorted(cnt.items(), key = lambda x : x[1], reverse = True)
 
-for key,value in cnt:
-    for _ in range(value):
-        print(key, end = ' ')
+for k,v in cnt:
+    for _ in range(v):
+        print(k, end = ' ')
