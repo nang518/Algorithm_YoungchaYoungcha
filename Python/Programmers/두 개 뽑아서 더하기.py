@@ -10,6 +10,3 @@ def solution(numbers):
     
     answer.sort()
     return answer
-
-numbers = [5,0,2,7]
-print(solution(numbers))
