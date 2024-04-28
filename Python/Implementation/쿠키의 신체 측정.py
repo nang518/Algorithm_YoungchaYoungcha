@@ -49,8 +49,7 @@ def leg(x,y):
         cnt += 1
 
         if arr[i][y] == '_':
-            cnt -= 1
-            break
+            return cnt - 2
     
     return cnt - 1
 
