@@ -1,14 +1,16 @@
-N,K = map(int, input().split())
+n,k = map(int, input().split())
 
-A = list()
+a = []
+for _ in range(n):
+    a.append(int(input()))
+
 cnt = 0
-for i in range(0,N):
-    A.append(int(input()))
-
-for i  in range(N-1, -1, -1):
-    if K >= A[i]:
-        cnt += K // A[i]
-        K %= A[i]
-    elif K == 0:
+for i in range(n-1, -1, -1):
+    if k >= a[i]:
+        cnt += k // a[i]
+        k %= a[i]
+    
+    elif k == 0:
         break
+
 print(cnt)
