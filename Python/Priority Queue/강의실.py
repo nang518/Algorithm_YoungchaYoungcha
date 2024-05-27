@@ -1,4 +1,4 @@
-import sys, heapq
+import sys,heapq
 input = sys.stdin.readline
 
 n = int(input())
@@ -7,8 +7,8 @@ lecture = []
 pq = []
 
 for _ in range(n):
-    s,t = map(int, input().split())
-    lecture.append((s,t))
+    num, s, e = map(int, input().split())
+    lecture.append((s,e))
 
 lecture.sort()
 
@@ -20,12 +20,12 @@ for i in range(n):
     
     else:
         end = heapq.heappop(pq)
-
+    
         if s >= end:
             heapq.heappush(pq, e)
         
         else:
-            heapq.heappush(pq, end)
             heapq.heappush(pq, e)
+            heapq.heappush(pq, end)
 
 print(len(pq))
