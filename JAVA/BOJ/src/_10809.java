@@ -5,7 +5,7 @@ public class _10809 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] arr = new int[26];
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < 26; i++) {
             arr[i] = -1;
         }
 
