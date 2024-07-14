@@ -4,7 +4,7 @@ import java.util.*;
 public class _10828 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stk = new Stack<>();
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
@@ -14,34 +14,34 @@ public class _10828 {
             String str = st.nextToken();
 
             if (str.equals("push")) {
-                stack.push(Integer.parseInt(st.nextToken()));
+                stk.push(Integer.parseInt(st.nextToken()));
             }
 
-            if (str.equals("pop")) {
-                if (stack.isEmpty()) {
+            else if (str.equals("pop")) {
+                if (stk.isEmpty()) {
                     sb.append(-1 + "\n");
                 } else {
-                    sb.append(stack.pop() + "\n");
+                    sb.append(stk.pop() + "\n");
                 }
             }
 
-            if (str.equals("size")) {
-                sb.append(stack.size() + "\n");
+            else if (str.equals("size")) {
+                sb.append(stk.size() + "\n");
             }
 
-            if (str.equals("empty")) {
-                if (stack.isEmpty()) {
+            else if (str.equals("empty")) {
+                if (stk.isEmpty()) {
                     sb.append(1 + "\n");
                 } else {
                     sb.append(0 + "\n");
                 }
             }
 
-            if (str.equals("top")) {
-                if (stack.isEmpty()) {
+            else if (str.equals("top")) {
+                if (stk.isEmpty()) {
                     sb.append(-1 + "\n");
                 } else {
-                    sb.append(stack.peek() + "\n");
+                    sb.append(stk.peek() + "\n");
                 }
             }
         }
