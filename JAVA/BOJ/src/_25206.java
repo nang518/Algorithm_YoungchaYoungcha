@@ -63,6 +63,4 @@ public class _25206 {
         System.out.printf("%.6f", gradeSum / pointSum);
 
     }
-}   
-
-
+}
