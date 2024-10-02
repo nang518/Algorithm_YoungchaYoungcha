@@ -41,6 +41,7 @@ public class _14620 {
         for (int i = 1; i < n - 1; i++) {
             for (int j = 1; j < n - 1; j++) {
                 if (!visited[i][j] && checkVisit(i, j)) {
+                    visited[i][j] = true;
                     int cost = costSum(i, j);
                     dfs(cnt + 1, sum + cost);
                     visitClear(i,j);
@@ -62,7 +63,6 @@ public class _14620 {
 
     static int costSum(int x, int y) {
         int cost = graph[x][y];
-        visited[x][y] = true;
 
         for (int i = 0; i < 4; i++) {
             int nx = x + dx[i];
