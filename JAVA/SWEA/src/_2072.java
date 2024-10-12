@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class _1859 {
+public class _2072 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -10,21 +10,17 @@ public class _1859 {
         int idx = 0;
 
         while (t-- > 0) {
-            idx++;
-            int n = Integer.parseInt(br.readLine());
             st = new StringTokenizer(br.readLine());
 
-            int[] arr = new int[n];
-            int max = 0;
-            long result = 0;
+            int result = 0;
+            idx++;
 
-            for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
-            }
+            for (int i = 0; i < 10; i++) {
+                int x = Integer.parseInt(st.nextToken());
 
-            for (int i = n-1; i >= 0; i--) {
-                if (arr[i] > max) max = arr[i];
-                result += max - arr[i];
+                if (x % 2 != 0) {
+                    result += x;
+                }
             }
 
             System.out.println("#" + idx + " " + result);
