@@ -30,7 +30,6 @@ public class _2468 {
 
         height = -1;
 
-
         while (true) {
             height++;
             cnt = 0;
