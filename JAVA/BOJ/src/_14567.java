@@ -30,8 +30,6 @@ public class _14567 {
             result[i] = 1;
         }
 
-        Queue<Integer> q = new LinkedList<>();
-
         for (int i = 1; i <= n; i++) {
             for (int idx : arr[i]) {
                 result[idx] = Math.max(result[idx], result[i] + 1);
