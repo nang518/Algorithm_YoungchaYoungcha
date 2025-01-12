@@ -25,7 +25,8 @@ public class _2003 {
             }
             else if (e == n) break;
             else {
-                sum += arr[e++];
+                sum += arr[e];
+                e++;
             }
 
             if (sum == m) cnt++;
