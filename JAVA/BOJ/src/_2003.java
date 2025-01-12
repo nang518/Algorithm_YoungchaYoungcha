@@ -19,7 +19,7 @@ public class _2003 {
         }
 
         while (true) {
-            if (sum >= m) {
+            if (sum > m) {
                 sum -= arr[s];
                 s++;
             }
