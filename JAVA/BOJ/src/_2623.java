@@ -23,7 +23,7 @@ public class _2623 {
             int num = Integer.parseInt(st.nextToken());
             int pre = Integer.parseInt(st.nextToken());
 
-            for (int j = 1; j < num; j++) {
+            for (int j = 0; j < num - 1; j++) {
                 int singer = Integer.parseInt(st.nextToken());
                 arr.get(pre).add(singer);
                 indegree[singer]++;
