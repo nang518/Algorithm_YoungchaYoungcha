@@ -4,7 +4,6 @@ import java.util.*;
 public class _15650 {
     static int n,m;
     static int[] arr;
-    static boolean[] visited;
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
@@ -15,7 +14,6 @@ public class _15650 {
         m = Integer.parseInt(st.nextToken());
 
         arr = new int[m];
-        visited = new boolean[n];
 
         backTracking(0, 0);
         System.out.println(sb);
@@ -31,12 +29,8 @@ public class _15650 {
         }
 
         for (int i = x; i < n; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                arr[depth] = i+1;
-                backTracking(i+1, depth+1);
-                visited[i] = false;
-            }
+            arr[depth] = i+1;
+            backTracking(i+1, depth+1);
         }
     }
 }
