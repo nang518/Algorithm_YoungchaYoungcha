@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class _1158 {
+public class _11866 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -28,5 +28,4 @@ public class _1158 {
         sb.append(q.poll() + ">");
         System.out.println(sb);
     }
-
 }
