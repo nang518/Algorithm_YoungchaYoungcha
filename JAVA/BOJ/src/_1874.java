@@ -8,8 +8,7 @@ public class _1874 {
 
         int n = Integer.parseInt(br.readLine());
         Stack<Integer> stk = new Stack<>();
-
-
+        
         int idx = 0;
 
         while (n-- > 0) {
