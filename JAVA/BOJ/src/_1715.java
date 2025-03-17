@@ -18,7 +18,7 @@ public class _1715 {
             return;
         }
 
-        while (pq.size() != 2) {
+        while (pq.size() > 1) {
             int x = pq.poll() + pq.poll();
             result += x;
             pq.offer(x);
