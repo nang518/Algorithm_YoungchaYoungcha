@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class _24511_x {
+public class _24511 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -12,7 +12,6 @@ public class _24511_x {
 
         int[] structureList = new int[n];
         int[] current = new int[n];
-        int[] insert = new int[n];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -25,6 +24,8 @@ public class _24511_x {
         }
 
         int m = Integer.parseInt(br.readLine());
+        int[] insert = new int[m];
+
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < m; i++) {
             insert[i] = Integer.parseInt(st.nextToken());
