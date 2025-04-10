@@ -32,10 +32,8 @@ public class _2503 {
                     int s_cnt = 0;
                     int b_cnt = 0;
 
-                    String sa = Integer.toString(x);
-
                     for (int p = 0; p < 3; p++) {
-                        char c = sa.charAt(p);
+                        char c = Integer.toString(x).charAt(p);
 
                         for (int q = 0; q < 3; q++) {
                             char a_split = Integer.toString(a).charAt(q);
