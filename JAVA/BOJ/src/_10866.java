@@ -2,27 +2,26 @@ import java.io.*;
 import java.util.*;
 
 public class _10866 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         Deque<Integer> dq = new ArrayDeque<>();
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
-
-        for (int i = 0; i < n; i++) {
+        while (n-- > 0) {
             st = new StringTokenizer(br.readLine());
-            String command = st.nextToken();
+            String cmd = st.nextToken();
 
-            if (command.equals("push_front")) {
+            if (cmd.equals("push_front")) {
                 dq.addFirst(Integer.parseInt(st.nextToken()));
             }
 
-            else if (command.equals("push_back")) {
-                dq.addLast(Integer.parseInt(st.nextToken()));
+            else if (cmd.equals("push_back")) {
+                dq.add(Integer.parseInt(st.nextToken()));
             }
 
-            else if (command.equals("pop_front")) {
+            else if (cmd.equals("pop_front")) {
                 if (!dq.isEmpty()) {
                     sb.append(dq.removeFirst()).append('\n');
                 }
@@ -32,7 +31,7 @@ public class _10866 {
                 }
             }
 
-            else if (command.equals("pop_back")) {
+            else if (cmd.equals("pop_back")) {
                 if (!dq.isEmpty()) {
                     sb.append(dq.removeLast()).append('\n');
                 }
@@ -42,21 +41,21 @@ public class _10866 {
                 }
             }
 
-            else if (command.equals("size")) {
+            else if (cmd.equals("size")) {
                 sb.append(dq.size()).append('\n');
             }
 
-            else if (command.equals("empty")) {
-                if (!dq.isEmpty()) {
-                    sb.append(0).append('\n');
+            else if (cmd.equals("empty")) {
+                if (dq.isEmpty()) {
+                    sb.append(1).append('\n');
                 }
 
                 else {
-                    sb.append(1).append('\n');
+                    sb.append(0).append('\n');
                 }
             }
 
-            else if (command.equals("front")) {
+            else if (cmd.equals("front")) {
                 if (!dq.isEmpty()) {
                     sb.append(dq.peek()).append('\n');
                 }
@@ -66,7 +65,7 @@ public class _10866 {
                 }
             }
 
-            else if (command.equals("back")) {
+            else if (cmd.equals("back")) {
                 if (!dq.isEmpty()) {
                     sb.append(dq.peekLast()).append('\n');
                 }
@@ -76,6 +75,7 @@ public class _10866 {
                 }
             }
         }
+
         System.out.println(sb);
     }
 }
