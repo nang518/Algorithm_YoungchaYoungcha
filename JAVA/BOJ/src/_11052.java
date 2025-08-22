@@ -24,3 +24,4 @@ public class _11052 {
         System.out.println(dp[n]);
     }
 }
+
