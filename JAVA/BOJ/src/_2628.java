@@ -6,11 +6,11 @@ public class _2628 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int m = Integer.parseInt(st.nextToken());
         int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-        int[] cutM = new int[m+1];
         int[] cutN = new int[n+1];
+        int[] cutM = new int[m+1];
 
         int c = Integer.parseInt(br.readLine());
 
@@ -21,9 +21,9 @@ public class _2628 {
             int num = Integer.parseInt(st.nextToken());
 
             if (v == 0) {
-                cutN[num] = 1;
-            } else {
                 cutM[num] = 1;
+            } else {
+                cutN[num] = 1;
             }
         }
 
