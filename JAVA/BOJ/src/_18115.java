@@ -14,7 +14,7 @@ public class _18115 {
 
         for (int i = 1; i <= n; i++) {
             int x = Integer.parseInt(st.nextToken());
-            
+
             if (x == 1) {
                 dq.addFirst(i);
             }
